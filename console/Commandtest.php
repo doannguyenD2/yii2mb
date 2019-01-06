@@ -4,19 +4,16 @@
 namespace console\controller;
 
 use Yii;
-use yii\base;
 use yii\base\Component;
 use yii\base\Model;
 use yii\base\NotSupportedException;
 use yii\db\Command;
 use yii\mongodb\Connection;
-use yii\mongodb\Collection;
 use yii\mongodb\Query;
 use yii\base\BaseObject;
-// use yii\console\Controller;
-use yii\web\NotFoundHttpException;
+use yii\console\Controller;
 
-//Sử dụng yii2 command tạo user noSQL
+//Sử dụng yii2 tạo 1tr user tự động
 
 class NewCommand extends Component
 {
