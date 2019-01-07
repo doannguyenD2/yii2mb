@@ -12,6 +12,9 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'console\controllers',
     'aliases' => [
+        //
+        // '@console' => '',
+        //
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
@@ -22,6 +25,19 @@ return [
           ],
     ],
     'components' => [
+        //
+        'onecontroller' => [
+            'class' => 'app\components\OneController',
+        ],
+        //
+        'commandtest' => [
+         
+            'class' => 'app\components\Commandtest',
+        // 'mycomponent' => [
+         
+        //     'class' => 'app\components\MyComponent',
+        ],
+        //
         'log' => [
             'targets' => [
                 [

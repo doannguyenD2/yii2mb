@@ -18,7 +18,7 @@ use yii\web\NotFoundHttpException;
 
 //Sử dụng yii2 command tạo user noSQL
 
-class NewCommand extends Component
+class Commandtest extends Component
 {
     public function execute(){
 

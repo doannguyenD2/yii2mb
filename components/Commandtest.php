@@ -1,7 +1,7 @@
 <?php
 
 // namespace app\command;
-namespace console\controller;
+namespace app\components;
 
 use Yii;
 use yii\base\Component;
@@ -9,13 +9,15 @@ use yii\base\Model;
 use yii\base\NotSupportedException;
 use yii\db\Command;
 use yii\mongodb\Connection;
+use yii\mongodb\Collection;
 use yii\mongodb\Query;
 use yii\base\BaseObject;
 use yii\console\Controller;
+use yii\base\InvalidConfigException;
 
 //Sử dụng yii2 tạo 1tr user tự động
 
-class NewCommand extends Component
+class Commandtest extends Component
 {
     public function execute(){
 

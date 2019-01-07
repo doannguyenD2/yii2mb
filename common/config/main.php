@@ -6,6 +6,19 @@ return [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
+        //
+        'mycomponent' => [
+         
+            'class' => 'app\components\MyComponent',
+        ],
+        'commandtest' => [
+         
+            'class' => 'app\components\Commandtest',
+        ],
+        //
+        // 'commandtest' => [
+        //     'class' => 'app\components\Commandtest',
+        // ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
