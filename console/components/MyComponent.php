@@ -24,7 +24,7 @@ class MyComponent extends Component
         echo 'one!';
         $collection = Yii::$app->mongodb->getCollection('customertest');
 
-        for($x=10000; $x<=1100000; $x++)
+        for($x=1; $x<=10; $x++)
         {
 
         $items = strval($x);
