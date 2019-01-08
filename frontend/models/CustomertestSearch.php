@@ -17,7 +17,7 @@ class CustomertestSearch extends Customertest
     public function rules()
     {
         return [
-            [['_id', 'name', 'email', 'address'], 'safe'],
+            [['_id', 'name', 'email', 'address', 'status'], 'safe'],
         ];
     }
 
@@ -59,7 +59,8 @@ class CustomertestSearch extends Customertest
         $query->andFilterWhere(['like', '_id', $this->_id])
             ->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'address', $this->address]);
+            ->andFilterWhere(['like', 'address', $this->address])
+            ->andFilterWhere(['like', 'status', $this->status]);
 
         return $dataProvider;
     }

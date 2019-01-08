@@ -11,6 +11,7 @@ use Yii;
  * @property mixed $name
  * @property mixed $email
  * @property mixed $address
+ * @property mixed $status
  */
 class Customertest extends \yii\mongodb\ActiveRecord
 {
@@ -32,6 +33,7 @@ class Customertest extends \yii\mongodb\ActiveRecord
             'name',
             'email',
             'address',
+            'status',
         ];
     }
 
@@ -41,7 +43,7 @@ class Customertest extends \yii\mongodb\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'email', 'address'], 'safe']
+            [['name', 'email', 'address', 'status'], 'safe']
         ];
     }
 
@@ -55,6 +57,7 @@ class Customertest extends \yii\mongodb\ActiveRecord
             'name' => 'Name',
             'email' => 'Email',
             'address' => 'Address',
+            'status' => 'Status',
         ];
     }
 }
