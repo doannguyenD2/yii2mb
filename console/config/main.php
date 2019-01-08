@@ -30,13 +30,13 @@ return [
             'class' => 'app\components\OneController',
         ],
         //
-        'commandtest' => [
+        // 'commandtest' => [
          
-            'class' => 'app\components\Commandtest',
+        //     'class' => 'app\components\Commandtest',
         // 'mycomponent' => [
          
         //     'class' => 'app\components\MyComponent',
-        ],
+        // ],
         //
         'log' => [
             'targets' => [
