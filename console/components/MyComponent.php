@@ -22,15 +22,15 @@ class MyComponent extends Component
     public function execute(){
 
         echo 'one!';
-        $collection = Yii::$app->mongodb->getCollection('customertest');
+        $collection = Yii::$app->mongodb->getCollection('newcus');
 
-        for($x=1; $x<=10; $x++)
+        for($x=1; $x<=1000000; $x++)
         {
-
         $items = strval($x);
         $name = "ten thu ".$items;
         $email = "taola".$items."@gmail.com";
-        $collection->insert(['name' => $name,'email' => $email, 'address'=>$items, 'status' => 1]);
+        $id = "id".$items."x";
+        $collection->insert(['myid'=> $id, 'name' => $name,'email' => $email, 'address'=>$items, 'status' => 1]);
         
         // $collection->insert(['fname' => 'Oh','lname'=>'fuck_that_shit', 'status' => 0,'addr'=>['street'=>'Toyota','city'=>'HN', 'state'=>'VN', 'zip'=>12345]]);
         }
