@@ -51,11 +51,17 @@ class NewcusController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
-    {
+{
+    if (Yii::$app->request->isAjax) {
+        return $this->renderAjax('view', [
+            'model' => $this->findModel($id),
+        ]);
+    } else {
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
+}
 
     /**
      * Creates a new Newcus model.

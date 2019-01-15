@@ -20,21 +20,33 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Newcus', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
+
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    'dataProvider' => $dataProvider,
+    'filterModel' => $searchModel,
+    'columns' => [
+        ['class' => 'yii\grid\SerialColumn'],
 
-            '_id',
-            'myid',
-            'name',
-            'email',
-            'address',
-            //'status',
-
-            ['class' => 'yii\grid\ActionColumn'],
+        '_id',
+        'myid',
+        'name',
+        'email',
+        'address',
+        //'status',
+        [
+            'class' => 'yii\grid\ActionColumn',
+            'buttons' => [
+                'view' => function ($url, $model) {
+                                 return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url , [ 'data-toggle' => 'modal', 'data-target' => '#pModal']);
+                            },
+            ],
         ],
-    ]); ?>
-    <?php Pjax::end(); ?>
-</div>
+        ],
+ ]); 
+
+?>
+<div class="modal remote fade" id="pModal">
+        <div class="modal-dialog">
+            <div class="modal-content loader-lg"></div>
+        </div>
+    </div>
