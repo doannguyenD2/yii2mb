@@ -3,16 +3,16 @@
 namespace frontend\controllers;
 
 use Yii;
-use frontend\models\Customertest;
-use frontend\models\CustomertestSearch;
+use frontend\models\Phuongxa;
+use frontend\models\PhuongxaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CustomertestController implements the CRUD actions for Customertest model.
+ * PhuongxaController implements the CRUD actions for Phuongxa model.
  */
-class CustomertestController extends Controller
+class PhuongxaController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class CustomertestController extends Controller
     }
 
     /**
-     * Lists all Customertest models.
+     * Lists all Phuongxa models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CustomertestSearch();
+        $searchModel = new PhuongxaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,38 +45,26 @@ class CustomertestController extends Controller
     }
 
     /**
-     * Displays a single Customertest model.
+     * Displays a single Phuongxa model.
      * @param integer $_id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
-{
-    if (Yii::$app->request->isAjax) {
-        return $this->renderAjax('view', [
-            'model' => $this->findModel($id),
-        ]);
-    } else {
+    {
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
-}
-    // public function actionView($id)
-    // {
-    //     return $this->render('view', [
-    //         'model' => $this->findModel($id),
-    //     ]);
-    // }
 
     /**
-     * Creates a new Customertest model.
+     * Creates a new Phuongxa model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Customertest();
+        $model = new Phuongxa();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => (string)$model->_id]);
@@ -88,43 +76,27 @@ class CustomertestController extends Controller
     }
 
     /**
-     * Updates an existing Customertest model.
+     * Updates an existing Phuongxa model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $_id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id) {
-
+    public function actionUpdate($id)
+    {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index', 'id' => (string) $model->_id]);
-        }elseif (Yii::$app->request->isAjax) {
-            return $this->renderAjax('update', [
-                        'model' => $model
-            ]);
-        } else {
-            return $this->render('update', [
-                        'model' => $model
-            ]);
+            return $this->redirect(['view', 'id' => (string)$model->_id]);
         }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
     }
-    // public function actionUpdate($id)
-    // {
-    //     $model = $this->findModel($id);
-
-    //     if ($model->load(Yii::$app->request->post()) && $model->save()) {
-    //         return $this->redirect(['view', 'id' => (string)$model->_id]);
-    //     }
-
-    //     return $this->render('update', [
-    //         'model' => $model,
-    //     ]);
-    // }
 
     /**
-     * Deletes an existing Customertest model.
+     * Deletes an existing Phuongxa model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $_id
      * @return mixed
@@ -138,15 +110,15 @@ class CustomertestController extends Controller
     }
 
     /**
-     * Finds the Customertest model based on its primary key value.
+     * Finds the Phuongxa model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $_id
-     * @return Customertest the loaded model
+     * @return Phuongxa the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Customertest::findOne($id)) !== null) {
+        if (($model = Phuongxa::findOne($id)) !== null) {
             return $model;
         }
 

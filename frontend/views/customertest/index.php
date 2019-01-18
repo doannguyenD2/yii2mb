@@ -20,18 +20,38 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    'dataProvider' => $dataProvider,
+    'filterModel' => $searchModel,
+    'columns' => [
+        ['class' => 'yii\grid\SerialColumn'],
 
-            '_id',
-            'name',
-            'email',
-            'address',
-            'status',
-
-            ['class' => 'yii\grid\ActionColumn'],
+        '_id',
+        'name',
+        'email',
+        'address',
+        //'status',
+        [
+            'class' => 'yii\grid\ActionColumn',
+            'buttons' => [
+                'view' => function ($url, $model) {
+                                 return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url , [ 'data-toggle' => 'modal', 'data-target' => '#pModal1']);
+                            },
+                'update' => function ($url, $model) {
+                                 return Html::a('<span class="glyphicon glyphicon-pencil"></span>', $url , [ 'data-toggle' => 'modal', 'data-target' => '#pModal2']);
+                            },
+            ],
         ],
-    ]); ?>
-</div>
+        ],
+ ]); 
+
+?>
+<div class="modal remote fade" id="pModal1">
+        <div class="modal-dialog">
+            <div class="modal-content loader-lg"></div>
+        </div>
+    </div>
+<div class="modal remote fade" id="pModal2">
+        <div class="modal-dialog">
+           <div class="modal-content loader-lg"></div>
+        </div>
+    </div>
