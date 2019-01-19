@@ -19,6 +19,8 @@ return [
         '@npm'   => '@vendor/npm-asset',
     ],
     'controllerMap' => [
+        //add mongodb migrate
+        'mongodb-migrate' => 'yii\mongodb\console\controllers\MigrateController',
         'fixture' => [
             'class' => 'yii\console\controllers\FixtureController',
             'namespace' => 'common\fixtures',
